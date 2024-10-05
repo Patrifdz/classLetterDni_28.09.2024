@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest'
-import { getLetterDni } from './dni.ts'
+import { getLetterDni } from '../dni.ts'
 
 
 test('adds "99999999" to getLetterDni "letter"', () => {
@@ -13,4 +13,22 @@ test('adds "99999999" to getLetterDni "letter"', () => {
     const letterDni = getLetterDni(numDni);
     //assert
     expect(letterDni).toBe("El número de DNI indicado no es correcto")
+  })
+
+  test('add "76657385" to getLetterDni "letter"', () => {
+    //arrange
+    const numDni = 76657385;
+    //act
+    const letterDni = getLetterDni(numDni);
+    //assert
+    expect(letterDni).toBe("H");
+  })
+
+  test('add "76657385" to getLetterDni "letter"', () => {
+    //arrange
+    const numDni = 0;
+    //act
+    const letterDni = getLetterDni(numDni);
+    //assert
+    expect(letterDni).toBe("El número de DNI indicado no es correcto");
   })
